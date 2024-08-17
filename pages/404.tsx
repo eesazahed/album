@@ -8,8 +8,8 @@ const Custom404: NextPage = () => {
     <div className="mx-8">
       <PageHead title="404" />
 
-      <main className="py-16 leading-8 text-xl grid min-h-screen place-items-center">
-        <Title text="Page not found" />
+      <main className="py-16 leading-8 text-xl grid min-h-screen place-items-center text-center">
+        <Title text="Page not found" emoji="&#128557;" />
       </main>
 
       <footer className="py-16 text-center">

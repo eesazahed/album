@@ -10,7 +10,7 @@ const Home: NextPage = () => {
       <PageHead title="Home" />
 
       <main className="p-16 leading-8 text-xl min-h-screen">
-        <Title text="My Photos" />
+        <Title text="My Photos" emoji="&#128247;" />
 
         <Gallery />
       </main>
