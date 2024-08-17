@@ -43,8 +43,8 @@ const Gallery: NextPage = ({}) => {
       {loading ? (
         <p>Loading...</p>
       ) : imageURLs && imageURLs.length > 0 ? (
-        <div className="flex flex-col justify-center items-center">
-          <div className="flex flex-wrap w-min bg-white">
+        <div className="flex flex-col">
+          <div className="flex flex-wrap justify-center">
             <ImageList imageURLs={imageURLs.slice(0, visibleCount)} />
           </div>
           {visibleCount < imageURLs.length && (
