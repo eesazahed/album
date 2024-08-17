@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import Link from "../components/Link";
 import PageHead from "../components/PageHead";
 import Title from "../components/Title";
+import Gallery from "../components/Gallery";
 
 const Home: NextPage = () => {
   return (
@@ -10,6 +11,8 @@ const Home: NextPage = () => {
 
       <main className="p-16 leading-8 text-xl min-h-screen">
         <Title text="My Photos" />
+
+        <Gallery />
       </main>
 
       <footer className="py-16 text-center">
