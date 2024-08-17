@@ -36,9 +36,9 @@ const Gallery: NextPage = ({}) => {
       {loading ? (
         <p>Loading...</p>
       ) : imageURLs && imageURLs.length > 0 ? (
-        <div className="flex">
+        <div className="flex flex-wrap m-[-1rem]">
           {imageURLs.map((imageURL) => (
-            <div key={imageURL}>
+            <div className="p-4" key={imageURL}>
               <Image imageURL={imageURL} />
             </div>
           ))}
