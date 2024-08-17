@@ -1,3 +1,3 @@
 # album ([View Live](https://eesazahed.github.io/album))
 
-A photo album
+A collection of my photography
