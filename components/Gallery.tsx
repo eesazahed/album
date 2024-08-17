@@ -1,6 +1,5 @@
 import { NextPage } from "next";
 import { useEffect, useState } from "react";
-import Image from "./Image";
 import ImageList from "./ImageList";
 
 interface ImageType {
@@ -11,7 +10,7 @@ const Gallery: NextPage = ({}) => {
   const [imageURLs, setImageURLs] = useState<string[]>();
   const [loading, setLoading] = useState<boolean>(true);
 
-  const imageCount = 10;
+  const imageCount = 8;
   const [visibleCount, setVisibleCount] = useState<number>(imageCount);
 
   useEffect(() => {
@@ -43,17 +42,19 @@ const Gallery: NextPage = ({}) => {
       {loading ? (
         <p>Loading...</p>
       ) : imageURLs && imageURLs.length > 0 ? (
-        <div className="flex flex-col">
+        <div className="flex flex-col items-center">
           <div className="flex flex-wrap justify-center">
             <ImageList imageURLs={imageURLs.slice(0, visibleCount)} />
           </div>
-          {visibleCount < imageURLs.length && (
+          {visibleCount < imageURLs.length ? (
             <button
               onClick={handleShowMore}
-              className="text-2xl mt-32 border-none hover:text-[#09c489]"
+              className="text-2xl mt-16 bg-blue-500 px-8 py-4 text-white rounded-3xl border-none duration-200 hover:bg-blue-600"
             >
               Show More
             </button>
+          ) : (
+            <p className="text-2xl mt-16">You&apos;ve reached the bottom!</p>
           )}
         </div>
       ) : (
