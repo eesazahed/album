@@ -9,7 +9,7 @@ const Home: NextPage = () => {
     <div className="mx-8 text-center">
       <PageHead title="Home" />
 
-      <main className="p-16 leading-8 text-xl min-h-screen">
+      <main className="p-4 md:p-16 leading-8 text-base md:text-xl min-h-screen">
         <Title text="My Photos" emoji="&#128247;" />
         <p>
           All photographs are original works created by{" "}
