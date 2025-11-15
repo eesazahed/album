@@ -8,7 +8,7 @@ interface Props {
 const PageHead: NextPage<Props> = ({ title }) => {
   return (
     <Head>
-      <title>Photo Album | {title}</title>
+      <title>photo album ~ {title}</title>
       <meta name="description" content="Photo Album. Made by Eesa Zahed" />
       <link rel="icon" href="./assets/images/favicon.ico" />
     </Head>

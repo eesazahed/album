@@ -49,16 +49,16 @@ const Gallery: NextPage = ({}) => {
           {visibleCount < imageURLs.length ? (
             <button
               onClick={handleShowMore}
-              className="text-2xl mt-16 bg-blue-500 px-8 py-4 text-white rounded-3xl border-none duration-200 hover:bg-blue-600"
+              className="text-xl mt-16 bg-green-600 px-12 py-4 text-white rounded-2xl border-none duration-200 hover:bg-green-700"
             >
-              Show More
+              show more
             </button>
           ) : (
-            <p className="text-2xl mt-16">You&apos;ve reached the bottom!</p>
+            <p className="text-2xl mt-16">you&apos;ve reached the end!</p>
           )}
         </div>
       ) : (
-        <p>No images could be loaded.</p>
+        <p>no images could be loaded</p>
       )}
     </div>
   );

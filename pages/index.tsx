@@ -7,23 +7,16 @@ import Gallery from "../components/Gallery";
 const Home: NextPage = () => {
   return (
     <div className="mx-8 text-center">
-      <PageHead title="Home" />
+      <PageHead title="eesa zahed" />
 
       <main className="p-4 md:p-16 leading-8 text-base md:text-xl min-h-screen">
-        <Title text="My Photos" emoji="&#128247;" />
+        <Title text="my photos" />
         <p>
-          All photographs are original works created by{" "}
-          <Link text="Eesa Zahed" href="https://eesa.zahed.ca" />.
+          all photographs are original works created by{" "}
+          <Link text="eesa zahed" href="https://eesa.zahed.ca" />
         </p>
         <Gallery />
       </main>
-
-      <footer className="py-16">
-        <p>
-          Designed and developed by{" "}
-          <Link text="Eesa Zahed" href="https://eesa.zahed.ca" />
-        </p>
-      </footer>
     </div>
   );
 };
