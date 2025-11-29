@@ -19,14 +19,30 @@ const Gallery: NextPage = ({}) => {
         "https://api.github.com/repos/eesazahed/photography/contents/"
       );
 
-      if (request.ok) {
-        const data = await request.json();
-
-        if (data) {
-          const URLs = data.map((image: ImageType) => image.download_url);
-          setImageURLs(URLs);
-        }
+      if (!request.ok) {
+        setLoading(false);
+        return;
       }
+
+      const data = await request.json();
+
+      const withDates = await Promise.all(
+        data.map(async (item: any) => {
+          const commitsReq = await fetch(
+            `https://api.github.com/repos/eesazahed/photography/commits?path=${item.path}`
+          );
+          const commits = commitsReq.ok ? await commitsReq.json() : [];
+          const latest = commits[0]?.commit?.author?.date || "1970-01-01";
+          return { ...item, latest };
+        })
+      );
+
+      const sorted = withDates.sort(
+        (a, b) => new Date(b.latest).getTime() - new Date(a.latest).getTime()
+      );
+
+      const URLs = sorted.map((image: any) => image.download_url);
+      setImageURLs(URLs);
 
       setLoading(false);
     };
